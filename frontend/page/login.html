@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | SmartPhone RD</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- LADO IZQUIERDO -->
+
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+                <a href="../index.html" class="logo">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    <span>
+                        SmartPhone <b>RD</b>
+                    </span>
+
+                </a>
+
+                <h1>
+                    Administra tu tienda
+                    <span>desde un solo lugar.</span>
+                </h1>
+
+                <p>
+                    Gestiona celulares, inventario, pedidos y clientes
+                    desde el panel administrativo de SmartPhone RD.
+                </p>
+
+                <div class="brand-features">
+
+                    <div>
+                        <i class="fa-solid fa-box"></i>
+                        <span>Gestiona tus productos</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Controla tus ventas</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        <span>Administra tus clientes</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULARIO -->
+
+        <section class="login-section">
+
+            <div class="login-container">
+
+                <div class="mobile-logo">
+
+                    <a href="../index.html" class="logo">
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        <span>
+                            SmartPhone <b>RD</b>
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="login-header">
+
+                    <span>
+                        PANEL ADMINISTRATIVO
+                    </span>
+
+                    <h2>
+                        Bienvenido de nuevo
+                    </h2>
+
+                    <p>
+                        Inicia sesión para administrar tu tienda.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Correo electrónico
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="tu-correo@email.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Contraseña
+                            </label>
+
+                            <a href="#">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="••••••••"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                        id="loginBtn"
+                    >
+
+                        <span>
+                            Iniciar sesión
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <div class="back-store">
+
+                    <a href="../index.html">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Volver a la tienda
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

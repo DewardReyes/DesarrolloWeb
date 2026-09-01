@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --dark: #0f172a;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --white: #ffffff;
+    --red: #dc2626;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.login-brand {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 70px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #2563eb,
+            transparent 35%
+        ),
+        #0f172a;
+    color: white;
+}
+
+.login-brand::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: -150px;
+    bottom: -180px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+}
+
+.login-brand::after {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    right: -250px;
+    bottom: -280px;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 50%;
+}
+
+.brand-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.logo i {
+    color: #60a5fa;
+    font-size: 27px;
+}
+
+.logo b {
+    color: #60a5fa;
+}
+
+.brand-content h1 {
+    margin-top: 80px;
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.brand-content h1 span {
+    display: block;
+    color: #60a5fa;
+}
+
+.brand-content > p {
+    max-width: 530px;
+    margin-top: 25px;
+    color: #94a3b8;
+    line-height: 1.8;
+}
+
+.brand-features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.brand-features div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-features i {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(37,99,235,.2);
+    color: #60a5fa;
+}
+
+.brand-features span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: white;
+}
+
+.login-container {
+    width: min(430px, 100%);
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.login-header {
+    margin-bottom: 35px;
+}
+
+.login-header > span {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.login-header h2 {
+    margin: 10px 0;
+    color: var(--dark);
+    font-size: 34px;
+    line-height: 1.1;
+}
+
+.login-header p {
+    color: var(--gray-500);
+    font-size: 13px;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.password-label a {
+    color: var(--primary);
+    font-size: 11px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box > i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    font-size: 14px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 52px;
+    padding: 0 45px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: .3s ease;
+}
+
+.input-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,.08);
+}
+
+.input-box button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background: transparent;
+    color: var(--gray-400);
+}
+
+.login-btn {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.login-btn:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.login-message {
+    display: none;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.login-message.error {
+    display: block;
+    background: #fee2e2;
+    color: var(--red);
+}
+
+.login-message.success {
+    display: block;
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+/* =========================
+   VOLVER
+========================= */
+
+.back-store {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-store a {
+    color: var(--gray-500);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.back-store a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand {
+        display: none;
+    }
+
+    .login-section {
+        min-height: 100vh;
+        padding: 30px;
+    }
+
+    .mobile-logo {
+        display: block;
+        margin-bottom: 60px;
+    }
+
+}
