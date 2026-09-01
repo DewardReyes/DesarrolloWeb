@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | SmartPhone RD</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <a href="../index.html">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    <span>
+                        SmartPhone <b>RD</b>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    D
+                </div>
+
+                <div class="profile-info">
+
+                    <strong id="sidebarName">
+                        Deward Reyes
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <span class="nav-title">
+                    PRINCIPAL
+                </span>
+
+                <a href="dashboard.html" class="nav-item active">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <span class="nav-title">
+                    TIENDA
+                </span>
+
+                <a href="productos.html" class="nav-item">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                    <span>
+                        Productos
+                    </span>
+
+                </a>
+
+
+                <a href="inventario.html" class="nav-item">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    <span>
+                        Inventario
+                    </span>
+
+                </a>
+
+
+                <a href="ofertas.html" class="nav-item">
+
+                    <i class="fa-solid fa-tags"></i>
+
+                    <span>
+                        Ofertas
+                    </span>
+
+                </a>
+
+
+                <span class="nav-title">
+                    ADMINISTRACIÓN
+                </span>
+
+                <a href="pedidos.html" class="nav-item">
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    <span>
+        Pedidos
+    </span>
+</a>
+
+
+                <a href="clientes.html" class="nav-item">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Clientes
+                    </span>
+
+                </a>
+
+
+                <a href="configuracion.html" class="nav-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Configuración
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="../index.html" class="store-link">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    Ver tienda
+
+                </a>
+
+
+                <button id="logoutBtn" class="logout-btn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Cerrar sesión
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             CONTENIDO
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header class="admin-header">
+
+                <button
+                    id="menuBtn"
+                    class="menu-btn"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Buscar..."
+                    >
+
+                </div>
+
+
+                <div class="header-actions">
+
+<div class="notification-wrapper">
+
+    <button
+        class="notification-btn"
+        id="ordersNotificationBtn"
+        type="button"
+        title="Pedidos pendientes"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+        <span id="ordersNotificationCount">
+            0
+        </span>
+
+    </button>
+
+
+    <!-- =========================================
+         PANEL DE NOTIFICACIONES
+    ========================================== -->
+
+    <div
+        class="notifications-panel"
+        id="notificationsPanel"
+    >
+
+        <div class="notifications-header">
+
+            <div>
+
+                <strong>
+                    Notificaciones
+                </strong>
+
+                <span>
+                    Pedidos pendientes
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="notifications-list"
+            id="notificationsList"
+        >
+
+            <div class="notifications-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Cargando...
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="pedidos.html"
+            class="notifications-footer"
+        >
+
+            Ver todos los pedidos
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+                    <div class="header-user">
+
+                        <div class="header-avatar" id="headerAvatar">
+                            D
+                        </div>
+
+                        <div>
+
+                            <strong id="headerName">
+                                Deward Reyes
+                            </strong>
+
+                            <small>
+                                Administrador
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENIDO -->
+
+            <section class="dashboard-content">
+
+                <div class="welcome-section">
+
+                    <div>
+
+                        <span class="section-label">
+                            PANEL ADMINISTRATIVO
+                        </span>
+
+                        <h1 id="welcomeTitle">
+                            Buenos días, Deward 👋
+                        </h1>
+
+                        <p>
+                            Aquí tienes el resumen de tu tienda.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="productos.html"
+                        class="primary-btn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Agregar producto
+
+                    </a>
+
+                </div>
+
+
+                <!-- ESTADÍSTICAS -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Productos
+                            </span>
+
+                            <strong id="totalProducts">
+                                0
+                            </strong>
+
+                            <small>
+                                En la tienda
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+
+                            <i class="fa-solid fa-box"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Inventario
+                            </span>
+
+                            <strong id="totalStock">
+                                0
+                            </strong>
+
+                            <small>
+                                Unidades disponibles
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+
+                            <i class="fa-solid fa-tags"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Ofertas
+                            </span>
+
+                            <strong id="totalOffers">
+                                0
+                            </strong>
+
+                            <small>
+                                Productos en oferta
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Destacados
+                            </span>
+
+                            <strong id="totalFeatured">
+                                0
+                            </strong>
+
+                            <small>
+                                Productos destacados
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- =====================================================
+     ESTADÍSTICAS DE PEDIDOS
+===================================================== -->
+
+<div class="stats-grid order-stats-grid">
+
+
+    <!-- PEDIDOS -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon blue">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+
+        <div class="stat-info">
+
+            <span>
+                Pedidos
+            </span>
+
+            <strong id="totalOrders">
+                0
+            </strong>
+
+            <small>
+                Pedidos registrados
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PENDIENTES -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon orange">
+
+            <i class="fa-solid fa-clock"></i>
+
+        </div>
+
+
+        <div class="stat-info">
+
+            <span>
+                Pendientes
+            </span>
+
+            <strong id="pendingOrders">
+                0
+            </strong>
+
+            <small>
+                Requieren atención
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- VENTAS -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon green">
+
+            <i class="fa-solid fa-dollar-sign"></i>
+
+        </div>
+
+
+        <div class="stat-info">
+
+            <span>
+                Ventas
+            </span>
+
+            <strong id="totalSales">
+                RD$0
+            </strong>
+
+            <small>
+                Ventas acumuladas
+            </small>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<!-- =====================================================
+     SECCIÓN INFERIOR
+===================================================== -->
+
+<div class="dashboard-grid">
+
+
+    <!-- =================================================
+         PRODUCTOS RECIENTES
+    ================================================== -->
+
+    <div class="dashboard-card products-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <span class="section-label">
+                    CATÁLOGO
+                </span>
+
+                <h2>
+                    Productos recientes
+                </h2>
+
+            </div>
+
+
+            <a href="productos.html">
+                Ver todos
+            </a>
+
+        </div>
+
+
+        <div
+            id="recentProducts"
+            class="recent-products"
+        >
+
+            <div class="loading">
+
+                <i
+                    class="fa-solid fa-spinner fa-spin"
+                ></i>
+
+                Cargando productos...
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PEDIDOS RECIENTES
+    ================================================== -->
+
+    <div class="dashboard-card recent-orders-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <span class="section-label">
+                    ACTIVIDAD
+                </span>
+
+                <h2>
+                    Pedidos recientes
+                </h2>
+
+            </div>
+
+
+            <a href="pedidos.html">
+                Ver todos
+            </a>
+
+        </div>
+
+
+        <div
+            id="recentOrders"
+            class="recent-orders"
+        >
+
+            <div class="loading">
+
+                <i
+                    class="fa-solid fa-spinner fa-spin"
+                ></i>
+
+                Cargando pedidos...
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ACCIONES RÁPIDAS
+    ================================================== -->
+
+    <div class="dashboard-card quick-actions">
+
+        <div class="card-header">
+
+            <div>
+
+                <span class="section-label">
+                    ACCIONES
+                </span>
+
+                <h2>
+                    Acceso rápido
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="actions-grid">
+
+
+            <a
+                href="productos.html"
+                class="action-card"
+            >
+
+                <div>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+                <span>
+                    Nuevo producto
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="productos.html"
+                class="action-card"
+            >
+
+                <div>
+
+                    <i class="fa-solid fa-pen"></i>
+
+                </div>
+
+                <span>
+                    Editar productos
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="pedidos.html"
+                class="action-card"
+            >
+
+                <div>
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+
+                <span>
+                    Ver pedidos
+                </span>
+
+            </a>
+
+
+
+            <a
+                href="clientes.html"
+                class="action-card"
+            >
+
+                <div>
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <span>
+                    Clientes
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>
