@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Agregar producto | SmartPhone RD</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/agregar-producto.css"
+    >
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                <span>
+                    SmartPhone <b>RD</b>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                D
+            </div>
+
+            <div class="profile-info">
+
+                <strong id="sidebarName">
+                    Deward Reyes
+                </strong>
+
+                <span>
+                    Administrador
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <span class="nav-title">
+                PRINCIPAL
+            </span>
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <span class="nav-title">
+                TIENDA
+            </span>
+
+            <a
+                href="productos.html"
+                class="nav-item active"
+            >
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                Productos
+
+            </a>
+
+
+            <a
+                href="inventario.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                Inventario
+
+            </a>
+
+
+            <a
+                href="ofertas.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-tags"></i>
+
+                Ofertas
+
+            </a>
+
+
+            <span class="nav-title">
+                ADMINISTRACIÓN
+            </span>
+
+            <a
+                href="pedidos.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Pedidos
+
+            </a>
+
+
+            <a
+                href="clientes.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                Clientes
+
+            </a>
+
+
+            <a
+                href="configuracion.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                Configuración
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="../index.html"
+                class="store-link"
+            >
+
+                <i class="fa-solid fa-store"></i>
+
+                Ver tienda
+
+            </a>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Cerrar sesión
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO -->
+
+    <main class="main-content">
+
+        <header class="admin-header">
+
+            <button
+                id="menuBtn"
+                class="menu-btn"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="header-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Buscar..."
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button class="notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span>
+                        3
+                    </span>
+
+                </button>
+
+
+                <div class="header-user">
+
+                    <div
+                        class="header-avatar"
+                        id="headerAvatar"
+                    >
+                        D
+                    </div>
+
+
+                    <div>
+
+                        <strong id="headerName">
+                            Deward Reyes
+                        </strong>
+
+                        <small>
+                            Administrador
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+
+            <!-- ENCABEZADO -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CATÁLOGO
+                    </span>
+
+                    <h1>
+                        Agregar producto
+                    </h1>
+
+                    <p>
+                        Añade un nuevo celular a tu tienda.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="productos.html"
+                    class="secondary-btn"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Volver a productos
+
+                </a>
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+
+            <form
+                id="productForm"
+                class="product-form"
+            >
+
+
+                <!-- INFORMACIÓN GENERAL -->
+
+                <div class="form-card">
+
+                    <div class="form-card-header">
+
+                        <div class="form-card-icon">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Información del producto
+                            </h2>
+
+                            <p>
+                                Datos principales del celular.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="brand">
+                                Marca
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="brand"
+                                placeholder="Ej. Samsung"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="model">
+                                Modelo
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="model"
+                                placeholder="Ej. Galaxy S26 Ultra"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="description">
+                                Descripción
+                            </label>
+
+                            <textarea
+                                id="description"
+                                rows="5"
+                                placeholder="Describe las características principales del celular..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRECIO E INVENTARIO -->
+
+                <div class="form-card">
+
+                    <div class="form-card-header">
+
+                        <div class="form-card-icon green">
+
+                            <i class="fa-solid fa-dollar-sign"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Precio e inventario
+                            </h2>
+
+                            <p>
+                                Configura el precio y disponibilidad.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="price">
+                                Precio
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-prefix">
+
+                                <span>
+                                    RD$
+                                </span>
+
+                                <input
+                                    type="number"
+                                    id="price"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="0.00"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="oldPrice">
+                                Precio anterior
+                            </label>
+
+                            <div class="input-prefix">
+
+                                <span>
+                                    RD$
+                                </span>
+
+                                <input
+                                    type="number"
+                                    id="oldPrice"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="0.00"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="stock">
+                                Cantidad disponible
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="stock"
+                                min="0"
+                                value="0"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="status">
+                                Estado
+                            </label>
+
+                            <select id="status">
+
+                                <option value="active">
+                                    Activo
+                                </option>
+
+                                <option value="inactive">
+                                    Inactivo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESPECIFICACIONES -->
+
+                <div class="form-card">
+
+                    <div class="form-card-header">
+
+                        <div class="form-card-icon purple">
+
+                            <i class="fa-solid fa-microchip"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Especificaciones
+                            </h2>
+
+                            <p>
+                                Características técnicas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="ram">
+                                RAM
+                            </label>
+
+                            <select id="ram">
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option value="4 GB">
+                                    4 GB
+                                </option>
+
+                                <option value="6 GB">
+                                    6 GB
+                                </option>
+
+                                <option value="8 GB">
+                                    8 GB
+                                </option>
+
+                                <option value="12 GB">
+                                    12 GB
+                                </option>
+
+                                <option value="16 GB">
+                                    16 GB
+                                </option>
+
+                                <option value="24 GB">
+                                    24 GB
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="storage">
+                                Almacenamiento
+                            </label>
+
+                            <select id="storage">
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option value="64 GB">
+                                    64 GB
+                                </option>
+
+                                <option value="128 GB">
+                                    128 GB
+                                </option>
+
+                                <option value="256 GB">
+                                    256 GB
+                                </option>
+
+                                <option value="512 GB">
+                                    512 GB
+                                </option>
+
+                                <option value="1 TB">
+                                    1 TB
+                                </option>
+
+                                <option value="2 TB">
+                                    2 TB
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="color">
+                                Color
+                            </label>
+
+                            <input
+                                type="text"
+                                id="color"
+                                placeholder="Ej. Negro"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Categoría
+                            </label>
+
+                            <select id="category">
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option value="1">
+                                    Celulares
+                                </option>
+
+                                <option value="2">
+                                    Accesorios
+                                </option>
+
+                                <option value="3">
+                                    Ofertas
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPCIONES -->
+
+                <div class="form-card">
+
+                    <div class="form-card-header">
+
+                        <div class="form-card-icon orange">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Visibilidad
+                            </h2>
+
+                            <p>
+                                Decide cómo aparecerá el producto.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="checkbox-options">
+
+
+                        <label class="check-option">
+
+                            <input
+                                type="checkbox"
+                                id="isOffer"
+                            >
+
+                            <span class="custom-check"></span>
+
+                            <div>
+
+                                <strong>
+                                    Producto en oferta
+                                </strong>
+
+                                <small>
+                                    Mostrar el producto dentro
+                                    de la sección de ofertas.
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="check-option">
+
+                            <input
+                                type="checkbox"
+                                id="isFeatured"
+                            >
+
+                            <span class="custom-check"></span>
+
+                            <div>
+
+                                <strong>
+                                    Producto destacado
+                                </strong>
+
+                                <small>
+                                    Mostrar el producto en
+                                    productos destacados.
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGEN -->
+
+<!-- IMAGEN -->
+
+<div class="form-card">
+
+    <div class="form-card-header">
+
+        <div class="form-card-icon blue">
+
+            <i class="fa-solid fa-image"></i>
+
+        </div>
+
+        <div>
+
+            <h2>
+                Imagen del producto
+            </h2>
+
+            <p>
+                Selecciona una imagen desde tu computadora.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="image-upload-area">
+
+        <div
+            class="image-preview"
+            id="imagePreview"
+        >
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <span>
+                Vista previa
+            </span>
+
+        </div>
+
+
+        <div class="image-upload-content">
+
+            <label
+                for="image"
+                class="upload-btn"
+            >
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                Seleccionar imagen
+
+            </label>
+
+
+            <input
+                type="file"
+                id="image"
+                accept="image/jpeg,image/png,image/webp"
+                hidden
+            >
+
+
+            <p>
+                JPG, PNG o WEBP.
+                Máximo 5 MB.
+            </p>
+
+
+            <span id="selectedFile">
+                Ningún archivo seleccionado
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+                <!-- MENSAJE -->
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                ></div>
+
+
+                <!-- BOTONES -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="productos.html"
+                        class="cancel-btn"
+                    >
+                        Cancelar
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                        id="saveProductBtn"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Guardar producto
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../js/agregar-producto.js"></script>
+<script src="../js/notificaciones-admin.js"></script>
+
+
+</body>
+
+</html>
