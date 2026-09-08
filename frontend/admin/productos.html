@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Productos | SmartPhone RD</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/productos-admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                <span>
+                    SmartPhone <b>RD</b>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                D
+            </div>
+
+
+            <div class="profile-info">
+
+                <strong id="sidebarName">
+                    Deward Reyes
+                </strong>
+
+                <span>
+                    Administrador
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <span class="nav-title">
+                PRINCIPAL
+            </span>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <span class="nav-title">
+                TIENDA
+            </span>
+
+
+            <a
+                href="productos.html"
+                class="nav-item active"
+            >
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                <span>
+                    Productos
+                </span>
+
+            </a>
+
+
+            <a
+                href="inventario.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <span>
+                    Inventario
+                </span>
+
+            </a>
+
+
+            <a
+                href="ofertas.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-tags"></i>
+
+                <span>
+                    Ofertas
+                </span>
+
+            </a>
+
+
+            <span class="nav-title">
+                ADMINISTRACIÓN
+            </span>
+
+
+            <a
+                href="pedidos.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span>
+                    Pedidos
+                </span>
+
+            </a>
+
+
+            <a
+                href="clientes.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Clientes
+                </span>
+
+            </a>
+
+
+            <a
+                href="configuracion.html"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Configuración
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+
+            <a
+                href="../index.html"
+                class="store-link"
+            >
+
+                <i class="fa-solid fa-store"></i>
+
+                Ver tienda
+
+            </a>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Cerrar sesión
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+
+            <button
+                id="menuBtn"
+                class="menu-btn"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="header-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Buscar..."
+                >
+
+            </div>
+
+
+            <div class="header-actions">
+
+
+                <div class="notification-wrapper">
+
+    <button
+        class="notification-btn"
+        id="ordersNotificationBtn"
+        type="button"
+        title="Pedidos pendientes"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+        <span id="ordersNotificationCount">
+            0
+        </span>
+
+    </button>
+
+
+    <!-- =========================================
+         PANEL DE NOTIFICACIONES
+    ========================================== -->
+
+    <div
+        class="notifications-panel"
+        id="notificationsPanel"
+    >
+
+        <div class="notifications-header">
+
+            <div>
+
+                <strong>
+                    Notificaciones
+                </strong>
+
+                <span>
+                    Pedidos pendientes
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="notifications-list"
+            id="notificationsList"
+        >
+
+            <div class="notifications-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Cargando...
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="pedidos.html"
+            class="notifications-footer"
+        >
+
+            Ver todos los pedidos
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+                <div class="header-user">
+
+
+                    <div
+                        class="header-avatar"
+                        id="headerAvatar"
+                    >
+                        D
+                    </div>
+
+
+                    <div>
+
+                        <strong id="headerName">
+                            Deward Reyes
+                        </strong>
+
+                        <small>
+                            Administrador
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- CONTENIDO -->
+
+        <section class="dashboard-content">
+
+
+            <!-- TÍTULO -->
+
+            <div class="page-heading">
+
+
+                <div>
+
+                    <span class="section-label">
+                        CATÁLOGO
+                    </span>
+
+                    <h1>
+                        Productos
+                    </h1>
+
+                    <p>
+                        Administra los celulares y productos
+                        de tu tienda.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="agregar-producto.html"
+                    class="primary-btn"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Nuevo producto
+
+                </a>
+
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="products-toolbar">
+
+
+                <div class="product-search">
+
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                    ></i>
+
+                    <input
+                        type="text"
+                        id="productSearch"
+                        placeholder="Buscar por marca o modelo..."
+                    >
+
+                </div>
+
+
+                <select id="categoryFilter">
+
+                    <option value="">
+                        Todas las categorías
+                    </option>
+
+                    <option value="Celulares">
+                        Celulares
+                    </option>
+
+                    <option value="Accesorios">
+                        Accesorios
+                    </option>
+
+                </select>
+
+
+                <select id="statusFilter">
+
+                    <option value="">
+                        Todos los estados
+                    </option>
+
+                    <option value="active">
+                        Activos
+                    </option>
+
+                    <option value="inactive">
+                        Inactivos
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+            <!-- TABLA -->
+
+            <div class="products-table-card">
+
+
+                <div class="table-top">
+
+                    <div>
+
+                        <h2>
+                            Lista de productos
+                        </h2>
+
+                        <span id="productCount">
+                            0 productos
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        id="refreshProducts"
+                        class="refresh-btn"
+                    >
+
+                        <i class="fa-solid fa-rotate"></i>
+
+                        Actualizar
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="table-container">
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    PRODUCTO
+                                </th>
+
+                                <th>
+                                    MARCA
+                                </th>
+
+                                <th>
+                                    PRECIO
+                                </th>
+
+                                <th>
+                                    STOCK
+                                </th>
+
+                                <th>
+                                    ESTADO
+                                </th>
+
+                                <th>
+                                    OFERTA
+                                </th>
+
+                                <th>
+                                    ACCIONES
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productsTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="7"
+                                    class="table-loading"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-spinner fa-spin"
+                                    ></i>
+
+                                    Cargando productos...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+                <!-- ESTADO VACÍO -->
+
+                <div
+                    id="emptyProducts"
+                    class="empty-products"
+                    style="display: none;"
+                >
+
+                    <div class="empty-icon">
+
+                        <i
+                            class="fa-solid fa-box-open"
+                        ></i>
+
+                    </div>
+
+
+                    <h3>
+                        No hay productos
+                    </h3>
+
+
+                    <p>
+                        Todavía no has agregado productos
+                        a tu tienda.
+                    </p>
+
+
+                    <a
+                        href="agregar-producto.html"
+                        class="primary-btn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Agregar producto
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="../js/productos-admin.js"></script>
+<script src="../js/notificaciones-admin.js"></script>
+</body>
+
+</html>
