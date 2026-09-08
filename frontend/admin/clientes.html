@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Administración de clientes - SmartPhone RD"
+    >
+
+    <title>
+        Clientes | SmartPhone RD
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- CSS GENERAL DEL ADMIN -->
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+
+    <!-- CSS DE CLIENTES -->
+
+    <link
+        rel="stylesheet"
+        href="../css/clientes.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CONTENEDOR ADMINISTRATIVO
+    ====================================================== -->
+
+    <div class="admin-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo">
+
+                <a href="dashboard.html">
+
+                    <i
+                        class="fa-solid fa-mobile-screen-button"
+                    ></i>
+
+                    <span>
+                        SmartPhone <b>RD</b>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- PERFIL -->
+
+            <div class="admin-profile">
+
+                <div
+                    class="profile-avatar"
+                    id="profileAvatar"
+                >
+                    D
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="sidebarName">
+                        Deward Reyes
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <nav class="sidebar-nav">
+
+
+                <span class="nav-title">
+                    PRINCIPAL
+                </span>
+
+
+                <!-- DASHBOARD -->
+
+                <a
+                    href="dashboard.html"
+                    class="nav-item"
+                >
+
+                    <i
+                        class="fa-solid fa-chart-pie"
+                    ></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <span class="nav-title">
+                    TIENDA
+                </span>
+
+
+                <!-- PRODUCTOS -->
+
+                <a
+                    href="productos.html"
+                    class="nav-item"
+                >
+
+                    <i
+                        class="fa-solid fa-mobile-screen"
+                    ></i>
+
+                    <span>
+                        Productos
+                    </span>
+
+                </a>
+
+
+                <!-- INVENTARIO -->
+
+                <a
+                    href="inventario.html"
+                    class="nav-item"
+                >
+
+                    <i
+                        class="fa-solid fa-boxes-stacked"
+                    ></i>
+
+                    <span>
+                        Inventario
+                    </span>
+
+                </a>
+
+
+                <!-- OFERTAS -->
+
+                <a
+                    href="ofertas.html"
+                    class="nav-item"
+                >
+
+                    <i
+                        class="fa-solid fa-tags"
+                    ></i>
+
+                    <span>
+                        Ofertas
+                    </span>
+
+                </a>
+
+
+                <span class="nav-title">
+                    ADMINISTRACIÓN
+                </span>
+
+
+                <!-- PEDIDOS -->
+
+                <a
+                    href="pedidos.html"
+                    class="nav-item"
+                >
+
+                    <i
+                        class="fa-solid fa-cart-shopping"
+                    ></i>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                </a>
+
+
+                <!-- CLIENTES -->
+
+                <a
+                    href="clientes.html"
+                    class="nav-item active"
+                >
+
+                    <i
+                        class="fa-solid fa-users"
+                    ></i>
+
+                    <span>
+                        Clientes
+                    </span>
+
+                </a>
+
+
+                <!-- CONFIGURACIÓN -->
+
+                <a
+                    href="configuracion.html"
+                    class="nav-item"
+                >
+
+                    <i
+                        class="fa-solid fa-gear"
+                    ></i>
+
+                    <span>
+                        Configuración
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- PARTE INFERIOR -->
+
+            <div class="sidebar-bottom">
+
+
+                <!-- VER TIENDA -->
+
+                <a
+                    href="../index.html"
+                    class="store-link"
+                >
+
+                    <i
+                        class="fa-solid fa-store"
+                    ></i>
+
+                    Ver tienda
+
+                </a>
+
+
+                <!-- CERRAR SESIÓN -->
+
+                <button
+                    type="button"
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+
+                    <i
+                        class="fa-solid fa-right-from-bracket"
+                    ></i>
+
+                    Cerrar sesión
+
+                </button>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTENIDO PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="admin-header">
+
+
+                <!-- MENÚ MÓVIL -->
+
+                <button
+                    type="button"
+                    id="menuBtn"
+                    class="menu-btn"
+                >
+
+                    <i
+                        class="fa-solid fa-bars"
+                    ></i>
+
+                </button>
+
+
+                <!-- BUSCADOR GENERAL -->
+
+                <div class="header-search">
+
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                    ></i>
+
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Buscar cliente..."
+                    >
+
+                </div>
+
+
+                <!-- ACCIONES -->
+
+                <div class="header-actions">
+
+
+                    <!-- NOTIFICACIONES -->
+
+                   <div class="notification-wrapper">
+
+    <button
+        class="notification-btn"
+        id="ordersNotificationBtn"
+        type="button"
+        title="Pedidos pendientes"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+        <span id="ordersNotificationCount">
+            0
+        </span>
+
+    </button>
+
+
+    <!-- =========================================
+         PANEL DE NOTIFICACIONES
+    ========================================== -->
+
+    <div
+        class="notifications-panel"
+        id="notificationsPanel"
+    >
+
+        <div class="notifications-header">
+
+            <div>
+
+                <strong>
+                    Notificaciones
+                </strong>
+
+                <span>
+                    Pedidos pendientes
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="notifications-list"
+            id="notificationsList"
+        >
+
+            <div class="notifications-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Cargando...
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="pedidos.html"
+            class="notifications-footer"
+        >
+
+            Ver todos los pedidos
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+                    <!-- USUARIO -->
+
+                    <div class="header-user">
+
+                        <div
+                            class="header-avatar"
+                            id="headerAvatar"
+                        >
+                            D
+                        </div>
+
+
+                        <div>
+
+                            <strong id="headerName">
+                                Deward Reyes
+                            </strong>
+
+                            <small>
+                                Administrador
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PÁGINA CLIENTES
+            ================================================== -->
+
+            <section class="clients-page">
+
+
+                <!-- CABECERA -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            ADMINISTRACIÓN
+                        </span>
+
+
+                        <h1>
+                            Clientes
+                        </h1>
+
+
+                        <p>
+                            Consulta y administra los clientes
+                            que han realizado pedidos.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ESTADÍSTICAS
+                ================================================== -->
+
+                <div class="clients-stats">
+
+
+                    <!-- TOTAL CLIENTES -->
+
+                    <div class="client-stat">
+
+                        <div class="stat-icon">
+
+                            <i
+                                class="fa-solid fa-users"
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                TOTAL CLIENTES
+                            </span>
+
+                            <strong id="totalClients">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL PEDIDOS -->
+
+                    <div class="client-stat">
+
+                        <div class="stat-icon">
+
+                            <i
+                                class="fa-solid fa-cart-shopping"
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                TOTAL PEDIDOS
+                            </span>
+
+                            <strong id="totalClientOrders">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL VENTAS -->
+
+                    <div class="client-stat">
+
+                        <div class="stat-icon">
+
+                            <i
+                                class="fa-solid fa-money-bill-wave"
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                VENTAS TOTALES
+                            </span>
+
+                            <strong id="totalClientSales">
+                                RD$0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HERRAMIENTAS
+                ================================================== -->
+
+                <div class="clients-toolbar">
+
+
+                    <div class="client-search">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                        ></i>
+
+
+                        <input
+                            type="text"
+                            id="clientSearch"
+                            placeholder="Buscar por nombre, teléfono o correo..."
+                        >
+
+                    </div>
+
+
+                    <div class="clients-count">
+
+                        <span id="clientsCount">
+                            0 clientes
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LISTA DE CLIENTES
+                ================================================== -->
+
+                <div
+                    id="clientsGrid"
+                    class="clients-grid"
+                >
+
+
+                    <!-- CARGANDO -->
+
+                    <div class="clients-message">
+
+                        <i
+                            class="fa-solid fa-spinner fa-spin"
+                        ></i>
+
+                        <span>
+                            Cargando clientes...
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MODAL HISTORIAL DEL CLIENTE
+    ====================================================== -->
+
+    <div
+        id="clientModal"
+        class="client-modal"
+    >
+
+
+        <div class="client-modal-content">
+
+
+            <!-- CABECERA MODAL -->
+
+            <div class="modal-header">
+
+
+                <div>
+
+                    <span class="modal-label">
+                        CLIENTE
+                    </span>
+
+                    <h2 id="modalTitle">
+                        Historial del cliente
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeModal"
+                    class="close-modal"
+                    title="Cerrar"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                    ></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- CONTENIDO MODAL -->
+
+            <div
+                id="modalBody"
+                class="modal-body"
+            >
+
+                <div class="clients-message">
+
+                    <i
+                        class="fa-solid fa-spinner fa-spin"
+                    ></i>
+
+                    Cargando...
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="../js/clientes-admin.js"
+    ></script>
+<script src="../js/notificaciones-admin.js"></script>
+
+</body>
+
+</html>
