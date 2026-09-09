@@ -1,0 +1,833 @@
+﻿/* =====================================================
+   SMARTPHONE RD
+   CLIENTES - ADMINISTRACIÓN
+===================================================== */
+
+
+/* =====================================================
+   PÁGINA PRINCIPAL
+===================================================== */
+
+.clients-page {
+    padding: 28px 30px;
+}
+
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+
+    .page-header h1 {
+        margin: 5px 0 6px;
+        color: #0f172a;
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+
+    .page-header p {
+        margin: 0;
+        color: #64748b;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+.clients-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+
+.client-stat {
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 16px;
+}
+
+
+.client-stat span {
+    display: block;
+    margin-bottom: 6px;
+    color: #64748b;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+
+.client-stat strong {
+    color: #0f172a;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   BARRA DE HERRAMIENTAS
+===================================================== */
+
+.clients-toolbar {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.client-search {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+}
+
+
+    .client-search i {
+        position: absolute;
+        left: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 10px;
+        pointer-events: none;
+    }
+
+
+    .client-search input {
+        width: 100%;
+        height: 40px;
+        padding: 0 14px 0 35px;
+        outline: none;
+        border: 1px solid #e2e8f0;
+        border-radius: 7px;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 10px;
+        transition: .2s ease;
+    }
+
+
+        .client-search input::placeholder {
+            color: #94a3b8;
+        }
+
+
+        .client-search input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .08);
+        }
+
+
+.clients-count {
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+
+/* =====================================================
+   TARJETA CLIENTE
+===================================================== */
+
+.client-card {
+    overflow: hidden;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+
+    .client-card:hover {
+        transform: translateY(-2px);
+        border-color: #bfdbfe;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, .07);
+    }
+
+
+/* =====================================================
+   CABECERA DE CLIENTE
+===================================================== */
+
+.client-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+
+.client-avatar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.client-header-info {
+    min-width: 0;
+}
+
+
+.client-name {
+    overflow: hidden;
+    margin: 0 0 4px;
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.client-email {
+    display: block;
+    overflow: hidden;
+    color: #94a3b8;
+    font-size: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.client-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+
+.client-info-item {
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #f1f5f9;
+    border-radius: 7px;
+    background: #f8fafc;
+}
+
+
+    .client-info-item span {
+        display: block;
+        margin-bottom: 5px;
+        color: #94a3b8;
+        font-size: 7px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+
+    .client-info-item strong {
+        display: block;
+        overflow: hidden;
+        color: #334155;
+        font-size: 9px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+/* =====================================================
+   RESUMEN
+===================================================== */
+
+.client-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+
+.summary-item {
+    min-width: 0;
+    text-align: center;
+}
+
+
+    .summary-item span {
+        display: block;
+        margin-bottom: 5px;
+        color: #94a3b8;
+        font-size: 7px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+
+    .summary-item strong {
+        display: block;
+        overflow: hidden;
+        color: #0f172a;
+        font-size: 11px;
+        font-weight: 800;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    .summary-item.total strong {
+        color: #2563eb;
+    }
+
+
+/* =====================================================
+   BOTÓN HISTORIAL
+===================================================== */
+
+.client-action {
+    width: 100%;
+    height: 38px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid #dbeafe;
+    border-radius: 7px;
+    outline: none;
+    background: #eff6ff;
+    color: #2563eb;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+
+    .client-action:hover {
+        background: #dbeafe;
+        border-color: #bfdbfe;
+    }
+
+
+    .client-action i {
+        font-size: 9px;
+    }
+
+
+/* =====================================================
+   MENSAJES
+===================================================== */
+
+.clients-message {
+    grid-column: 1 / -1;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 20px;
+    color: #94a3b8;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+    .clients-message i {
+        font-size: 25px;
+    }
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.client-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, .55);
+    backdrop-filter: blur(2px);
+}
+
+
+    .client-modal.open {
+        display: flex;
+    }
+
+
+.client-modal-content {
+    width: 100%;
+    max-width: 620px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 25px 70px rgba(15, 23, 42, .20);
+    animation: modalOpen .2s ease;
+}
+
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =====================================================
+   HEADER MODAL
+===================================================== */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.modal-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2563eb;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.modal-header h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+.close-modal {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #475569;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+
+    .close-modal:hover {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+
+/* =====================================================
+   CUERPO MODAL
+===================================================== */
+
+.modal-body {
+    padding: 20px;
+}
+
+
+/* =====================================================
+   INFORMACIÓN MODAL
+===================================================== */
+
+.modal-client-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.modal-info-box {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+
+    .modal-info-box span {
+        display: block;
+        margin-bottom: 5px;
+        color: #94a3b8;
+        font-size: 7px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+
+    .modal-info-box strong {
+        display: block;
+        color: #334155;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+
+/* =====================================================
+   TÍTULO HISTORIAL
+===================================================== */
+
+.history-title {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   PEDIDO DEL HISTORIAL
+===================================================== */
+
+.history-order {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+
+    .history-order:last-child {
+        margin-bottom: 0;
+    }
+
+
+.history-order-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+
+.history-order-number {
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.history-order-total {
+    color: #0f172a;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.history-order-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #64748b;
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   ESTADOS DEL PEDIDO
+===================================================== */
+
+.history-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 7px;
+    border-radius: 20px;
+    font-size: 7px;
+    font-weight: 800;
+}
+
+
+    .history-status.pendiente {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+
+    .history-status.confirmado {
+        background: #dbeafe;
+        color: #1d4ed8;
+    }
+
+
+    .history-status.enviado {
+        background: #e0e7ff;
+        color: #4338ca;
+    }
+
+
+    .history-status.entregado {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+
+    .history-status.cancelado {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .clients-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - MÓVIL
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .clients-page {
+        padding: 20px 15px;
+    }
+
+
+    .clients-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .clients-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .client-search {
+        max-width: none;
+    }
+
+
+    .clients-count {
+        text-align: right;
+    }
+
+
+    .client-info {
+        grid-template-columns: 1fr;
+    }
+
+
+    .modal-client-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - TELÉFONO
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .client-card {
+        padding: 15px;
+    }
+
+
+    .client-summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+
+    .summary-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+
+        .summary-item span {
+            margin-bottom: 0;
+        }
+
+
+    .history-order-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .client-modal {
+        padding: 10px;
+    }
+
+
+    .client-modal-content {
+        max-height: 95vh;
+    }
+}
+
+
+/* =====================================================
+   BOTÓN VER PEDIDO - PEQUEÑO
+===================================================== */
+
+.history-view-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 8px;
+    padding: 5px 9px;
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #2563eb;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+    /* =====================================================
+   ICONO
+===================================================== */
+
+    .history-view-order i {
+        font-size: 10px;
+        line-height: 1;
+    }
+
+
+    /* =====================================================
+   HOVER
+===================================================== */
+
+    .history-view-order:hover {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #2563eb;
+        box-shadow: 0 3px 8px rgba( 37, 99, 235, 0.15 );
+    }
+
+
+    /* =====================================================
+   CLICK
+===================================================== */
+
+    .history-view-order:active {
+        transform: translateY(1px);
+        box-shadow: none;
+    }
+
+
+    /* =====================================================
+   FOCUS
+===================================================== */
+
+    .history-view-order:focus {
+        outline: none;
+    }
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .history-view-order {
+        padding: 5px 8px;
+        font-size: 10px;
+        gap: 4px;
+    }
+
+
+        .history-view-order i {
+            font-size: 9px;
+        }
+}

@@ -1,0 +1,1027 @@
+﻿/* =====================================================
+   SMARTPHONE RD
+   INVENTARIO - ADMINISTRACIÓN
+===================================================== */
+
+
+/* =====================================================
+   PÁGINA
+===================================================== */
+
+.inventory-page {
+    padding: 28px 30px;
+}
+
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+
+    .page-header h1 {
+        margin: 5px 0 6px;
+        color: #0f172a;
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+
+    .page-header p {
+        margin: 0;
+        color: #64748b;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+.inventory-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+
+.inventory-stat {
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+
+    .inventory-stat:hover {
+        border-color: #bfdbfe;
+        box-shadow: 0 8px 25px rgba(15, 23, 42, .05);
+    }
+
+
+    .inventory-stat .stat-icon {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 9px;
+        background: #eff6ff;
+        color: #2563eb;
+        font-size: 16px;
+    }
+
+
+    .inventory-stat span {
+        display: block;
+        margin-bottom: 6px;
+        color: #64748b;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: .3px;
+    }
+
+
+    .inventory-stat strong {
+        color: #0f172a;
+        font-size: 21px;
+        font-weight: 800;
+    }
+
+
+    /* =====================================================
+   STOCK BAJO
+===================================================== */
+
+    .inventory-stat.warning {
+        border-color: #fde68a;
+    }
+
+
+        .inventory-stat.warning .stat-icon {
+            background: #fffbeb;
+            color: #d97706;
+        }
+
+
+        .inventory-stat.warning strong {
+            color: #b45309;
+        }
+
+
+    /* =====================================================
+   AGOTADOS
+===================================================== */
+
+    .inventory-stat.danger {
+        border-color: #fecaca;
+    }
+
+
+        .inventory-stat.danger .stat-icon {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+
+        .inventory-stat.danger strong {
+            color: #dc2626;
+        }
+
+
+/* =====================================================
+   BARRA DE HERRAMIENTAS
+===================================================== */
+
+.inventory-toolbar {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.inventory-search {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+}
+
+
+    .inventory-search i {
+        position: absolute;
+        left: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 10px;
+        pointer-events: none;
+    }
+
+
+    .inventory-search input {
+        width: 100%;
+        height: 40px;
+        padding: 0 14px 0 35px;
+        outline: none;
+        border: 1px solid #e2e8f0;
+        border-radius: 7px;
+        background: #ffffff;
+        color: #0f172a;
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 10px;
+        transition: .2s ease;
+    }
+
+
+        .inventory-search input::placeholder {
+            color: #94a3b8;
+        }
+
+
+        .inventory-search input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .08);
+        }
+
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+.inventory-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+    .inventory-filter label {
+        color: #64748b;
+        font-size: 9px;
+        font-weight: 600;
+    }
+
+
+    .inventory-filter select {
+        height: 40px;
+        min-width: 140px;
+        padding: 0 12px;
+        outline: none;
+        border: 1px solid #e2e8f0;
+        border-radius: 7px;
+        background: #ffffff;
+        color: #334155;
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 9px;
+        cursor: pointer;
+    }
+
+
+        .inventory-filter select:focus {
+            border-color: #2563eb;
+        }
+
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+.inventory-count {
+    margin-left: auto;
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   CONTENEDOR TABLA
+===================================================== */
+
+.inventory-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   TABLA
+===================================================== */
+
+.inventory-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+.inventory-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+
+    .inventory-table thead {
+        background: #f8fafc;
+    }
+
+
+    .inventory-table th {
+        height: 45px;
+        padding: 0 18px;
+        border-bottom: 1px solid #e2e8f0;
+        color: #64748b;
+        font-size: 7px;
+        font-weight: 800;
+        text-align: left;
+        letter-spacing: .5px;
+        white-space: nowrap;
+    }
+
+
+    .inventory-table td {
+        padding: 14px 18px;
+        border-bottom: 1px solid #f1f5f9;
+        color: #334155;
+        font-size: 9px;
+        vertical-align: middle;
+    }
+
+
+    .inventory-table tbody tr {
+        transition: .15s ease;
+    }
+
+
+        .inventory-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+
+        .inventory-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+
+/* =====================================================
+   PRODUCTO
+===================================================== */
+
+.inventory-product {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+
+.inventory-product-image {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    background: #f8fafc;
+}
+
+
+    .inventory-product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    .inventory-product-image i {
+        color: #94a3b8;
+        font-size: 15px;
+    }
+
+
+.inventory-product-info {
+    min-width: 0;
+}
+
+
+.inventory-product-name {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 3px;
+    color: #0f172a;
+    font-size: 10px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.inventory-product-id {
+    display: block;
+    color: #94a3b8;
+    font-size: 7px;
+}
+
+
+/* =====================================================
+   PRECIO
+===================================================== */
+
+.inventory-price {
+    color: #0f172a;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   STOCK
+===================================================== */
+
+.stock-value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+    .stock-value.available {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+
+    .stock-value.low {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+
+    .stock-value.out {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+
+/* =====================================================
+   ESTADO
+===================================================== */
+
+.stock-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 7px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+    .stock-status::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        display: block;
+        border-radius: 50%;
+    }
+
+
+    .stock-status.available {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+
+        .stock-status.available::before {
+            background: #16a34a;
+        }
+
+
+    .stock-status.low {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+
+        .stock-status.low::before {
+            background: #d97706;
+        }
+
+
+    .stock-status.out {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+
+        .stock-status.out::before {
+            background: #dc2626;
+        }
+
+
+/* =====================================================
+   FECHA
+===================================================== */
+
+.inventory-date {
+    color: #64748b;
+    font-size: 8px;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.table-loading {
+    height: 180px;
+    color: #94a3b8 !important;
+    text-align: center !important;
+}
+
+
+    .table-loading i {
+        margin-right: 8px;
+    }
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.table-error {
+    height: 180px;
+    color: #dc2626 !important;
+    text-align: center !important;
+}
+
+
+    .table-error i {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+
+/* =====================================================
+   SIN RESULTADOS
+===================================================== */
+
+.table-empty {
+    height: 180px;
+    color: #94a3b8 !important;
+    text-align: center !important;
+}
+
+
+    .table-empty i {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+
+/* =====================================================
+   RESPONSIVE - 1200 PX
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .inventory-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .inventory-toolbar {
+        flex-wrap: wrap;
+    }
+
+
+    .inventory-count {
+        margin-left: 0;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 800 PX
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .inventory-page {
+        padding: 20px 15px;
+    }
+
+
+    .inventory-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .inventory-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .inventory-search {
+        max-width: none;
+    }
+
+
+    .inventory-filter {
+        width: 100%;
+    }
+
+
+        .inventory-filter select {
+            flex: 1;
+        }
+
+
+    .inventory-count {
+        text-align: right;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 500 PX
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .inventory-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .inventory-stat {
+        min-height: 80px;
+    }
+
+
+    .page-header h1 {
+        font-size: 21px;
+    }
+}
+
+/* =====================================================
+   BOTÓN MOVIMIENTOS
+===================================================== */
+
+.inventory-movements-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 11px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+
+    .inventory-movements-btn:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        color: #111827;
+        transform: translateY(-1px);
+    }
+
+
+    .inventory-movements-btn i {
+        font-size: 11px;
+    }
+
+
+/* =====================================================
+   MODAL DE MOVIMIENTOS
+===================================================== */
+
+.inventory-movements-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+}
+
+
+    .inventory-movements-modal.open {
+        display: block;
+    }
+
+
+/* =====================================================
+   FONDO
+===================================================== */
+
+.inventory-movements-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba( 15, 23, 42, 0.45 );
+    backdrop-filter: blur(2px);
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.inventory-movements-content {
+    position: relative;
+    width: min( 620px, calc(100% - 32px) );
+    max-height: calc( 100vh - 60px );
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba( 0, 0, 0, 0.18 );
+    overflow: hidden;
+    animation: inventoryModalIn 0.2s ease;
+}
+
+
+/* =====================================================
+   ANIMACIÓN
+===================================================== */
+
+@keyframes inventoryModalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY( 10px ) scale( 0.98 );
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.inventory-movements-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 22px;
+    border-bottom: 1px solid #eef0f3;
+}
+
+
+.inventory-movements-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #6b7280;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+
+.inventory-movements-header h2 {
+    margin: 0;
+    color: #111827;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+
+.inventory-movements-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #6b7280;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+
+    .inventory-movements-close:hover {
+        background: #e5e7eb;
+        color: #111827;
+    }
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.inventory-movements-body {
+    max-height: calc( 100vh - 160px );
+    overflow-y: auto;
+    padding: 18px 22px 22px;
+}
+
+
+/* =====================================================
+   CARGANDO
+===================================================== */
+
+.inventory-movements-loading {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   SIN MOVIMIENTOS
+===================================================== */
+
+.inventory-movements-empty {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 30px;
+    text-align: center;
+}
+
+
+    .inventory-movements-empty i {
+        margin-bottom: 5px;
+        color: #9ca3af;
+        font-size: 32px;
+    }
+
+
+    .inventory-movements-empty strong {
+        color: #374151;
+        font-size: 14px;
+    }
+
+
+    .inventory-movements-empty span {
+        max-width: 400px;
+        color: #9ca3af;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+/* =====================================================
+   MOVIMIENTO
+===================================================== */
+
+.inventory-movement-item {
+    display: flex;
+    gap: 13px;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+
+    .inventory-movement-item:last-child {
+        margin-bottom: 0;
+    }
+
+
+/* =====================================================
+   ICONO
+===================================================== */
+
+.inventory-movement-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+
+.inventory-movement-main {
+    min-width: 0;
+    flex: 1;
+}
+
+
+/* =====================================================
+   PARTE SUPERIOR
+===================================================== */
+
+.inventory-movement-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 9px;
+}
+
+
+    .inventory-movement-top strong {
+        color: #111827;
+        font-size: 13px;
+    }
+
+
+    .inventory-movement-top span {
+        color: #9ca3af;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+
+/* =====================================================
+   STOCK
+===================================================== */
+
+.inventory-movement-stock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-bottom: 9px;
+}
+
+
+    .inventory-movement-stock span {
+        color: #6b7280;
+        font-size: 11px;
+    }
+
+
+    .inventory-movement-stock strong {
+        color: #374151;
+    }
+
+
+/* =====================================================
+   MOTIVO
+===================================================== */
+
+.inventory-movement-reason {
+    color: #4b5563;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   PEDIDO
+===================================================== */
+
+.inventory-movement-order {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 9px;
+    padding: 5px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 7px;
+    background: #f9fafb;
+    color: #4b5563;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+    .inventory-movement-order:hover {
+        background: #f3f4f6;
+        color: #111827;
+    }
+
+
+/* =====================================================
+   BLOQUEO DEL BODY
+===================================================== */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media ( max-width: 700px ) {
+
+    .inventory-movements-content {
+        width: calc( 100% - 20px );
+        margin: 10px auto;
+        max-height: calc( 100vh - 20px );
+        border-radius: 13px;
+    }
+
+
+    .inventory-movements-header {
+        padding: 16px;
+    }
+
+
+    .inventory-movements-body {
+        padding: 14px 16px 16px;
+    }
+
+
+    .inventory-movement-item {
+        padding: 12px;
+    }
+
+
+    .inventory-movement-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+}

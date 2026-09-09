@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Ofertas - SmartPhone RD">
+
+    <title>
+        Ofertas | SmartPhone RD
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- CSS GENERAL -->
+
+    <link rel="stylesheet"
+          href="../css/admin.css">
+
+
+    <!-- CSS OFERTAS -->
+
+    <link rel="stylesheet"
+          href="../css/ofertas.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ADMIN LAYOUT
+    ====================================================== -->
+
+    <div class="admin-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar"
+               id="sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    <span>
+                        SmartPhone <b>RD</b>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PERFIL -->
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar"
+                     id="profileAvatar">
+                    D
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="sidebarName">
+                        Deward Reyes
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav class="sidebar-nav">
+
+
+                <span class="nav-title">
+                    PRINCIPAL
+                </span>
+
+
+                <!-- DASHBOARD -->
+
+                <a href="dashboard.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <span class="nav-title">
+                    TIENDA
+                </span>
+
+
+                <!-- PRODUCTOS -->
+
+                <a href="productos.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                    <span>
+                        Productos
+                    </span>
+
+                </a>
+
+
+                <!-- INVENTARIO -->
+
+                <a href="inventario.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    <span>
+                        Inventario
+                    </span>
+
+                </a>
+
+
+                <!-- OFERTAS -->
+
+                <a href="ofertas.html"
+                   class="nav-item active">
+
+                    <i class="fa-solid fa-tags"></i>
+
+                    <span>
+                        Ofertas
+                    </span>
+
+                </a>
+
+
+
+                <span class="nav-title">
+                    ADMINISTRACIÓN
+                </span>
+
+
+                <!-- PEDIDOS -->
+
+                <a href="pedidos.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                </a>
+
+
+                <!-- CLIENTES -->
+
+                <a href="clientes.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Clientes
+                    </span>
+
+                </a>
+
+
+                <!-- CONFIGURACIÓN -->
+
+                <a href="configuracion.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Configuración
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- =================================================
+                 PARTE INFERIOR
+            ================================================== -->
+
+            <div class="sidebar-bottom">
+
+
+                <a href="../index.html"
+                   class="store-link">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    Ver tienda
+
+                </a>
+
+
+                <button type="button"
+                        id="logoutBtn"
+                        class="logout-btn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Cerrar sesión
+
+                </button>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTENIDO PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="admin-header">
+
+
+                <!-- MENÚ MÓVIL -->
+
+                <button type="button"
+                        id="menuBtn"
+                        class="menu-btn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+
+                <!-- BUSCADOR -->
+
+                <div class="header-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Buscar producto...">
+
+                </div>
+
+
+
+                <!-- ACCIONES -->
+
+                <div class="header-actions">
+
+
+                    <div class="notification-wrapper">
+
+                        <button class="notification-btn"
+                                id="ordersNotificationBtn"
+                                type="button"
+                                title="Pedidos pendientes">
+
+                            <i class="fa-regular fa-bell"></i>
+
+                            <span id="ordersNotificationCount">
+                                0
+                            </span>
+
+                        </button>
+
+
+                        <!-- =========================================
+                             PANEL DE NOTIFICACIONES
+                        ========================================== -->
+
+                        <div class="notifications-panel"
+                             id="notificationsPanel">
+
+                            <div class="notifications-header">
+
+                                <div>
+
+                                    <strong>
+                                        Notificaciones
+                                    </strong>
+
+                                    <span>
+                                        Pedidos pendientes
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notifications-list"
+                                 id="notificationsList">
+
+                                <div class="notifications-loading">
+
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                    Cargando...
+
+                                </div>
+
+                            </div>
+
+
+                            <a href="pedidos.html"
+                               class="notifications-footer">
+
+                                Ver todos los pedidos
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="header-user">
+
+
+                        <div class="header-avatar"
+                             id="headerAvatar">
+                            D
+                        </div>
+
+
+                        <div>
+
+                            <strong id="headerName">
+                                Deward Reyes
+                            </strong>
+
+                            <small>
+                                Administrador
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PÁGINA DE OFERTAS
+            ================================================== -->
+
+            <section class="offers-page">
+
+
+                <!-- =================================================
+                     CABECERA
+                ================================================== -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            PROMOCIONES
+                        </span>
+
+
+                        <h1>
+                            Ofertas
+                        </h1>
+
+
+                        <p>
+                            Administra los precios promocionales
+                            y productos destacados de tu tienda.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ESTADÍSTICAS
+                ================================================== -->
+
+                <div class="offers-stats">
+
+
+                    <!-- TOTAL PRODUCTOS -->
+
+                    <div class="offer-stat-card">
+
+
+                        <div class="offer-stat-icon">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                PRODUCTOS
+                            </span>
+
+
+                            <strong id="totalProducts">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- EN OFERTA -->
+
+                    <div class="
+                            offer-stat-card
+                            offer-active
+                        ">
+
+
+                        <div class="offer-stat-icon">
+
+                            <i class="fa-solid fa-tags"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                EN OFERTA
+                            </span>
+
+
+                            <strong id="totalOffers">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- DESTACADOS -->
+
+                    <div class="
+                            offer-stat-card
+                            featured-stat
+                        ">
+
+
+                        <div class="offer-stat-icon">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                DESTACADOS
+                            </span>
+
+
+                            <strong id="totalFeatured">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- DESCUENTO -->
+
+                    <div class="
+                            offer-stat-card
+                            discount-stat
+                        ">
+
+
+                        <div class="offer-stat-icon">
+
+                            <i class="fa-solid fa-percent"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                DESCUENTO PROMEDIO
+                            </span>
+
+
+                            <strong id="averageDiscount">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HERRAMIENTAS
+                ================================================== -->
+
+                <div class="offers-toolbar">
+
+
+                    <!-- BUSCADOR -->
+
+                    <div class="offers-search">
+
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                        <input type="text"
+                               id="offersSearch"
+                               placeholder="Buscar por marca o modelo...">
+
+
+                    </div>
+
+
+
+                    <!-- FILTRO OFERTA -->
+
+                    <div class="offers-filter">
+
+
+                        <label for="offerFilter">
+                            Mostrar:
+                        </label>
+
+
+                        <select id="offerFilter">
+
+                            <option value="all">
+                                Todos
+                            </option>
+
+                            <option value="offers">
+                                En oferta
+                            </option>
+
+                            <option value="no-offers">
+                                Sin oferta
+                            </option>
+
+                            <option value="featured">
+                                Destacados
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+
+
+                    <!-- FILTRO ESTADO -->
+
+                    <div class="offers-filter">
+
+
+                        <label for="statusFilter">
+                            Estado:
+                        </label>
+
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                Todos
+                            </option>
+
+                            <option value="active">
+                                Activos
+                            </option>
+
+                            <option value="inactive">
+                                Inactivos
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+
+
+                    <!-- CONTADOR -->
+
+                    <div class="offers-count">
+
+                        <span id="productsCount">
+                            0 productos
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CONTENEDOR DE PRODUCTOS
+                ================================================== -->
+
+                <div id="offersGrid"
+                     class="offers-grid">
+
+
+                    <!-- LOADING -->
+
+                    <div class="offers-loading">
+
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+
+                        <span>
+                            Cargando productos...
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/ofertas-admin.js"></script>
+    <script src="../js/notificaciones-admin.js"></script>
+
+</body>
+
+</html>
