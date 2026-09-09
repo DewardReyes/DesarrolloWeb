@@ -1,0 +1,402 @@
+﻿.page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+    .page-heading h1 {
+        margin: 7px 0;
+        font-size: 28px;
+    }
+
+    .page-heading p {
+        color: var(--gray-500);
+        font-size: 12px;
+    }
+
+
+/* =====================================
+   TOOLBAR
+===================================== */
+
+.products-toolbar {
+    display: grid;
+    grid-template-columns: 1fr 190px 170px;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+
+.product-search {
+    position: relative;
+}
+
+
+    .product-search i {
+        position: absolute;
+        top: 50%;
+        left: 14px;
+        transform: translateY(-50%);
+        color: var(--gray-400);
+        font-size: 12px;
+    }
+
+
+    .product-search input,
+    .products-toolbar select {
+        width: 100%;
+        height: 43px;
+        padding: 0 13px;
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+        outline: none;
+        background: white;
+        font-family: inherit;
+        font-size: 11px;
+    }
+
+
+    .product-search input {
+        padding-left: 38px;
+    }
+
+
+        .product-search input:focus,
+        .products-toolbar select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37,99,235,.07);
+        }
+
+
+/* =====================================
+   TABLA
+===================================== */
+
+.products-table-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.table-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+
+    .table-top h2 {
+        font-size: 15px;
+    }
+
+
+    .table-top span {
+        display: block;
+        margin-top: 4px;
+        color: var(--gray-400);
+        font-size: 9px;
+    }
+
+
+.refresh-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 13px;
+    background: var(--gray-100);
+    border-radius: 7px;
+    color: var(--gray-600);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+    .refresh-btn:hover {
+        background: var(--gray-200);
+    }
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+
+thead {
+    background: var(--gray-50);
+}
+
+
+th {
+    padding: 13px 18px;
+    text-align: left;
+    color: var(--gray-500);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    white-space: nowrap;
+}
+
+
+td {
+    padding: 15px 18px;
+    border-top: 1px solid var(--gray-100);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+
+tbody tr:hover {
+    background: #fafcff;
+}
+
+
+/* =====================================
+   PRODUCTO
+===================================== */
+
+.product-table-info {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+
+.product-table-image {
+    width: 42px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: var(--gray-100);
+    color: var(--primary);
+    font-size: 17px;
+    overflow: hidden;
+}
+
+
+    .product-table-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+.product-table-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+    .product-table-name strong {
+        font-size: 10px;
+    }
+
+
+    .product-table-name span {
+        color: var(--gray-400);
+        font-size: 8px;
+    }
+
+
+/* =====================================
+   PRECIO
+===================================== */
+
+.product-price-cell {
+    font-weight: 800;
+    font-size: 11px;
+}
+
+
+.old-price {
+    display: block;
+    margin-top: 3px;
+    color: var(--gray-400);
+    text-decoration: line-through;
+    font-size: 8px;
+}
+
+
+/* =====================================
+   STOCK
+===================================== */
+
+.stock-normal {
+    color: var(--green);
+    font-weight: 700;
+}
+
+
+.stock-low {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+
+.stock-empty {
+    color: var(--red);
+    font-weight: 700;
+}
+
+
+/* =====================================
+   ESTADOS
+===================================== */
+
+.status-badge,
+.offer-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+.status-active {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+.status-inactive {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+
+.offer-yes {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+
+.offer-no {
+    background: var(--gray-100);
+    color: var(--gray-400);
+}
+
+
+/* =====================================
+   ACCIONES
+===================================== */
+
+.table-actions {
+    display: flex;
+    gap: 5px;
+}
+
+
+.table-action {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    background: var(--gray-100);
+    color: var(--gray-500);
+    font-size: 10px;
+    transition: .2s ease;
+}
+
+
+    .table-action.edit:hover {
+        background: #dbeafe;
+        color: var(--primary);
+    }
+
+
+    .table-action.delete:hover {
+        background: #fee2e2;
+        color: var(--red);
+    }
+
+
+/* =====================================
+   LOADING
+===================================== */
+
+.table-loading {
+    height: 200px;
+    text-align: center;
+    color: var(--gray-400);
+}
+
+
+/* =====================================
+   EMPTY
+===================================== */
+
+.empty-products {
+    padding: 70px 30px;
+    text-align: center;
+}
+
+
+.empty-icon {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 18px;
+    border-radius: 15px;
+    background: var(--gray-100);
+    color: var(--gray-400);
+    font-size: 27px;
+}
+
+
+.empty-products h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+
+.empty-products p {
+    margin-bottom: 20px;
+    color: var(--gray-500);
+    font-size: 11px;
+}
+
+
+.empty-products .primary-btn {
+    width: max-content;
+    margin: auto;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 800px) {
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .products-toolbar {
+        grid-template-columns: 1fr;
+    }
+}

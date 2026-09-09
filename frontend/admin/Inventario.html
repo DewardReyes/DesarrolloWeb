@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Inventario - SmartPhone RD">
+
+    <title>
+        Inventario | SmartPhone RD
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- CSS GENERAL -->
+
+    <link rel="stylesheet"
+          href="../css/admin.css">
+
+
+    <!-- CSS INVENTARIO -->
+
+    <link rel="stylesheet"
+          href="../css/inventario.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CONTENEDOR ADMIN
+    ====================================================== -->
+
+    <div class="admin-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar"
+               id="sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    <span>
+                        SmartPhone <b>RD</b>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- PERFIL -->
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar"
+                     id="profileAvatar">
+                    D
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="sidebarName">
+                        Deward Reyes
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav class="sidebar-nav">
+
+
+                <span class="nav-title">
+                    PRINCIPAL
+                </span>
+
+
+                <!-- DASHBOARD -->
+
+                <a href="dashboard.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <span class="nav-title">
+                    TIENDA
+                </span>
+
+
+                <!-- PRODUCTOS -->
+
+                <a href="productos.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                    <span>
+                        Productos
+                    </span>
+
+                </a>
+
+
+                <!-- INVENTARIO -->
+
+                <a href="inventario.html"
+                   class="nav-item active">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    <span>
+                        Inventario
+                    </span>
+
+                </a>
+
+
+                <!-- OFERTAS -->
+
+                <a href="ofertas.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-tags"></i>
+
+                    <span>
+                        Ofertas
+                    </span>
+
+                </a>
+
+
+                <span class="nav-title">
+                    ADMINISTRACIÓN
+                </span>
+
+
+                <!-- PEDIDOS -->
+
+                <a href="pedidos.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                </a>
+
+
+                <!-- CLIENTES -->
+
+                <a href="clientes.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Clientes
+                    </span>
+
+                </a>
+
+
+                <!-- CONFIGURACIÓN -->
+
+                <a href="configuracion.html"
+                   class="nav-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Configuración
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- =================================================
+                 PARTE INFERIOR
+            ================================================== -->
+
+            <div class="sidebar-bottom">
+
+
+                <a href="../index.html"
+                   class="store-link">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    Ver tienda
+
+                </a>
+
+
+                <button type="button"
+                        id="logoutBtn"
+                        class="logout-btn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Cerrar sesión
+
+                </button>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTENIDO PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="admin-header">
+
+
+                <button type="button"
+                        id="menuBtn"
+                        class="menu-btn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- BUSCADOR -->
+
+                <div class="header-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Buscar producto...">
+
+                </div>
+
+
+                <!-- ACCIONES -->
+
+                <div class="header-actions">
+
+
+                    <div class="notification-wrapper">
+
+                        <button class="notification-btn"
+                                id="ordersNotificationBtn"
+                                type="button"
+                                title="Pedidos pendientes">
+
+                            <i class="fa-regular fa-bell"></i>
+
+                            <span id="ordersNotificationCount">
+                                0
+                            </span>
+
+                        </button>
+
+
+                        <!-- =========================================
+                             PANEL DE NOTIFICACIONES
+                        ========================================== -->
+
+                        <div class="notifications-panel"
+                             id="notificationsPanel">
+
+                            <div class="notifications-header">
+
+                                <div>
+
+                                    <strong>
+                                        Notificaciones
+                                    </strong>
+
+                                    <span>
+                                        Pedidos pendientes
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="notifications-list"
+                                 id="notificationsList">
+
+                                <div class="notifications-loading">
+
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                    Cargando...
+
+                                </div>
+
+                            </div>
+
+
+                            <a href="pedidos.html"
+                               class="notifications-footer">
+
+                                Ver todos los pedidos
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="header-user">
+
+                        <div class="header-avatar"
+                             id="headerAvatar">
+                            D
+                        </div>
+
+
+                        <div>
+
+                            <strong id="headerName">
+                                Deward Reyes
+                            </strong>
+
+                            <small>
+                                Administrador
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PÁGINA INVENTARIO
+            ================================================== -->
+
+            <section class="inventory-page">
+
+
+                <!-- CABECERA -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            TIENDA
+                        </span>
+
+
+                        <h1>
+                            Inventario
+                        </h1>
+
+
+                        <p>
+                            Consulta el stock disponible de tus productos.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ESTADÍSTICAS
+                ================================================== -->
+
+                <div class="inventory-stats">
+
+
+                    <!-- PRODUCTOS -->
+
+                    <div class="inventory-stat">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                PRODUCTOS
+                            </span>
+
+                            <strong id="totalProducts">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STOCK TOTAL -->
+
+                    <div class="inventory-stat">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-boxes-stacked"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                STOCK TOTAL
+                            </span>
+
+                            <strong id="totalStock">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STOCK BAJO -->
+
+                    <div class="
+                            inventory-stat
+                            warning
+                        ">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                STOCK BAJO
+                            </span>
+
+                            <strong id="lowStock">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AGOTADOS -->
+
+                    <div class="
+                            inventory-stat
+                            danger
+                        ">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-circle-xmark"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                AGOTADOS
+                            </span>
+
+                            <strong id="outOfStock">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HERRAMIENTAS
+                ================================================== -->
+
+                <div class="inventory-toolbar">
+
+
+                    <!-- BUSCAR -->
+
+                    <div class="inventory-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                        <input type="text"
+                               id="inventorySearch"
+                               placeholder="Buscar por marca o modelo...">
+
+                    </div>
+
+
+                    <!-- FILTRO -->
+
+                    <div class="inventory-filter">
+
+                        <label for="stockFilter">
+                            Estado:
+                        </label>
+
+
+                        <select id="stockFilter">
+
+                            <option value="all">
+                                Todos
+                            </option>
+
+                            <option value="available">
+                                Disponible
+                            </option>
+
+                            <option value="low">
+                                Stock bajo
+                            </option>
+
+                            <option value="out">
+                                Agotado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CONTADOR -->
+
+                    <div class="inventory-count">
+
+                        <span id="productsCount">
+                            0 productos
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TABLA
+                ================================================== -->
+
+                <div class="inventory-card">
+
+
+                    <div class="inventory-table-wrapper">
+
+
+                        <table class="inventory-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        PRODUCTO
+                                    </th>
+
+                                    <th>
+                                        PRECIO
+                                    </th>
+
+                                    <th>
+                                        STOCK
+                                    </th>
+
+                                    <th>
+                                        ESTADO
+                                    </th>
+
+                                    <th>
+                                        ÚLTIMA ACTUALIZACIÓN
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="inventoryTableBody">
+
+                                <tr>
+
+                                    <td colspan="5"
+                                        class="table-loading">
+
+                                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                        Cargando inventario...
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/inventario-admin.js"></script>
+    <script src="../js/notificaciones-admin.js"></script>
+
+</body>
+
+</html>
