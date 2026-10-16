@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Finalizar compra | SmartPhone RD</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/checkout.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="checkout-header">
+
+        <div class="header-container">
+
+            <a
+                href="../index.html"
+                class="logo"
+            >
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                SmartPhone <b>RD</b>
+
+            </a>
+
+
+            <a
+                href="../index.html"
+                class="back-store"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Volver a la tienda
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CONTENIDO -->
+
+    <main class="checkout-page">
+
+
+        <div class="checkout-title">
+
+            <span>
+                SMARTPHONE RD
+            </span>
+
+            <h1>
+                Finalizar compra
+            </h1>
+
+            <p>
+                Completa tus datos para realizar tu pedido.
+            </p>
+
+        </div>
+
+
+
+        <div class="checkout-layout">
+
+
+            <!-- =================================
+                 FORMULARIO
+            ================================== -->
+
+            <section class="checkout-form-card">
+
+                <div class="card-title">
+
+                    <div class="number">
+                        1
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Datos del cliente
+                        </h2>
+
+                        <p>
+                            Información para entregar tu pedido.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="checkoutForm">
+
+
+                    <div class="form-grid">
+
+
+                        <!-- NOMBRE -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Nombre completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Ej. Deward Reyes"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TELÉFONO -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Ej. 809-555-5555"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- CORREO -->
+
+                        <div class="form-group full">
+
+                            <label for="email">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="correo@ejemplo.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PROVINCIA -->
+
+                        <div class="form-group">
+
+                            <label for="province">
+                                Provincia
+                            </label>
+
+                            <select
+                                id="province"
+                                name="province"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona una provincia
+                                </option>
+
+                                <option>
+                                    Santiago
+                                </option>
+
+                                <option>
+                                    Santo Domingo
+                                </option>
+
+                                <option>
+                                    Puerto Plata
+                                </option>
+
+                                <option>
+                                    La Vega
+                                </option>
+
+                                <option>
+                                    San Cristóbal
+                                </option>
+
+                                <option>
+                                    La Romana
+                                </option>
+
+                                <option>
+                                    San Pedro de Macorís
+                                </option>
+
+                                <option>
+                                    Duarte
+                                </option>
+
+                                <option>
+                                    Espaillat
+                                </option>
+
+                                <option>
+                                    Otras
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- CIUDAD -->
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                Ciudad
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Ej. Santiago"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DIRECCIÓN -->
+
+                        <div class="form-group full">
+
+                            <label for="address">
+                                Dirección
+                            </label>
+
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                placeholder="Calle, número, sector..."
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- REFERENCIA -->
+
+                        <div class="form-group full">
+
+                            <label for="reference">
+                                Referencia de entrega
+                                <span>
+                                    Opcional
+                                </span>
+                            </label>
+
+                            <textarea
+                                id="reference"
+                                name="reference"
+                                rows="3"
+                                placeholder="Ej. Cerca de..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MÉTODO DE PAGO -->
+
+                    <div class="payment-section">
+
+                        <div class="card-title">
+
+                            <div class="number">
+                                2
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    Método de pago
+                                </h2>
+
+                                <p>
+                                    Selecciona cómo deseas pagar.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-options">
+
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment_method"
+                                    value="contra_entrega"
+                                    checked
+                                >
+
+                                <div class="payment-content">
+
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                                    <div>
+
+                                        <strong>
+                                            Pago contra entrega
+                                        </strong>
+
+                                        <span>
+                                            Paga al recibir tu pedido.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment_method"
+                                    value="transferencia"
+                                >
+
+                                <div class="payment-content">
+
+                                    <i class="fa-solid fa-building-columns"></i>
+
+                                    <div>
+
+                                        <strong>
+                                            Transferencia bancaria
+                                        </strong>
+
+                                        <span>
+                                            Recibirás las instrucciones después del pedido.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BOTÓN -->
+
+                    <button
+                        type="submit"
+                        class="submit-order"
+                        id="submitOrder"
+                    >
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Confirmar pedido
+
+                    </button>
+
+
+                    <div
+                        id="formMessage"
+                        class="form-message"
+                    ></div>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================
+                 RESUMEN
+            ================================== -->
+
+            <aside class="order-summary">
+
+                <div class="summary-header">
+
+                    <h2>
+                        Resumen del pedido
+                    </h2>
+
+                    <span id="summaryCount">
+                        0 productos
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="summaryProducts"
+                    class="summary-products"
+                >
+
+                    <!-- JS -->
+
+                </div>
+
+
+                <div class="summary-calculation">
+
+                    <div>
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="summarySubtotal">
+                            RD$0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <strong id="summaryShipping">
+                            RD$0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="summaryTotal">
+                            RD$0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/checkout.js"></script>
+
+</body>
+
+</html>
