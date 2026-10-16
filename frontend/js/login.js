@@ -17,9 +17,9 @@ const loginBtn =
     document.getElementById("loginBtn");
 
 
-// ==========================================
+
 // MOSTRAR / OCULTAR CONTRASEÑA
-// ==========================================
+
 
 togglePassword.addEventListener(
     "click",
@@ -61,9 +61,9 @@ togglePassword.addEventListener(
 );
 
 
-// ==========================================
+
 // LOGIN
-// ==========================================
+
 
 loginForm.addEventListener(
     "submit",
@@ -194,9 +194,9 @@ loginForm.addEventListener(
 );
 
 
-// ==========================================
+
 // MENSAJE
-// ==========================================
+
 
 function showMessage(
     message,

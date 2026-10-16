@@ -4,20 +4,19 @@ const jwt = require("jsonwebtoken");
 const db = require("../config/database");
 
 
-// ==========================================
+
 // REGISTRAR USUARIO
-// ==========================================
+
 
 async function register(req, res) {
 
     try {
 
         const {
-            name,
-            email,
-            password,
-            role
-        } = req.body;
+    name,
+    email,
+    password
+} = req.body;
 
 
         if (!name || !email || !password) {
@@ -62,10 +61,7 @@ async function register(req, res) {
             );
 
 
-        const userRole =
-            role === "admin"
-                ? "admin"
-                : "customer";
+        const userRole = "customer";
 
 
         const [result] =
@@ -121,9 +117,9 @@ async function register(req, res) {
 }
 
 
-// ==========================================
+
 // LOGIN
-// ==========================================
+
 
 async function login(req, res) {
 

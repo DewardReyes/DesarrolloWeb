@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Detalle del producto - SmartPhone RD"
+    >
+
+    <title>
+        Producto | SmartPhone RD
+    </title>
+
+
+    <!-- =====================================
+         GOOGLE FONT
+    ====================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================
+         FONT AWESOME
+    ====================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================
+         CSS
+    ====================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/producto.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="store-header">
+
+        <div class="header-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="store-logo"
+            >
+
+                <i
+                    class="fa-solid fa-mobile-screen-button"
+                ></i>
+
+                <span>
+                    SmartPhone <b>RD</b>
+                </span>
+
+            </a>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <nav class="store-nav">
+
+                <a href="../index.html">
+                    Inicio
+                </a>
+
+                <a href="../index.html#productos">
+                    Celulares
+                </a>
+
+                <a href="../index.html#ofertas">
+                    Ofertas
+                </a>
+
+                <a href="../index.html#destacados">
+                    Destacados
+                </a>
+
+            </nav>
+
+
+            <!-- ACCIONES DEL HEADER -->
+
+            <div class="header-actions">
+
+
+                <!-- VOLVER A LA TIENDA -->
+
+                <a
+                    href="../index.html"
+                    class="header-icon"
+                    title="Volver a la tienda"
+                >
+
+                    <i
+                        class="fa-solid fa-store"
+                    ></i>
+
+                </a>
+
+
+                <!-- BOTÓN DEL CARRITO -->
+
+                <button
+                    type="button"
+                    class="cart-button"
+                    id="cartButton"
+                    title="Carrito"
+                >
+
+                    <i
+                        class="fa-solid fa-cart-shopping"
+                    ></i>
+
+                    <span id="cartCount">
+                        0
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="product-page">
+
+
+        <!-- =====================================
+             BREADCRUMB
+        ====================================== -->
+
+        <div class="breadcrumb-container">
+
+            <a href="../index.html">
+                Inicio
+            </a>
+
+            <i
+                class="fa-solid fa-chevron-right"
+            ></i>
+
+            <span>
+                Producto
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================
+             DETALLE DEL PRODUCTO
+        ====================================== -->
+
+        <section
+            id="productContainer"
+            class="product-detail"
+        >
+
+            <div class="product-loading">
+
+                <i
+                    class="fa-solid fa-spinner fa-spin"
+                ></i>
+
+                Cargando producto...
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PRODUCTOS RELACIONADOS
+        ====================================== -->
+
+        <section class="related-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    TAMBIÉN TE PUEDE INTERESAR
+                </span>
+
+                <h2>
+                    Productos relacionados
+                </h2>
+
+            </div>
+
+
+            <div
+                id="relatedProducts"
+                class="related-grid"
+            >
+
+                <div class="product-loading">
+
+                    <i
+                        class="fa-solid fa-spinner fa-spin"
+                    ></i>
+
+                    Cargando...
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         CARRITO
+    ====================================================== -->
+
+    <div
+        id="cartOverlay"
+        class="cart-overlay"
+    >
+
+        <div class="cart-panel">
+
+
+            <!-- =====================================
+                 CABECERA
+            ====================================== -->
+
+            <div class="cart-header">
+
+                <div>
+
+                    <span class="cart-label">
+                        TU COMPRA
+                    </span>
+
+                    <h2>
+                        Mi carrito
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeCart"
+                    class="close-cart"
+                    title="Cerrar carrito"
+                >
+
+                    <i
+                        class="fa-solid fa-xmark"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 PRODUCTOS DEL CARRITO
+            ====================================== -->
+
+            <div
+                id="cartItems"
+                class="cart-items"
+            >
+
+                <!--
+                    JavaScript coloca aquí
+                    los productos del carrito.
+                -->
+
+                <div class="empty-cart">
+
+                    <i
+                        class="fa-solid fa-cart-shopping"
+                    ></i>
+
+                    <h3>
+                        Tu carrito está vacío
+                    </h3>
+
+                    <p>
+                        Agrega un celular para comenzar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 FOOTER
+            ====================================== -->
+
+            <div class="cart-footer">
+
+
+                <!-- =====================================
+                     RESUMEN
+                ====================================== -->
+
+                <div class="cart-summary">
+
+
+                    <!-- SUBTOTAL -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="cartSubtotal">
+                            RD$0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ENVÍO -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <strong id="cartShipping">
+                            RD$250
+                        </strong>
+
+                    </div>
+
+
+                    <!-- SEPARADOR -->
+
+                    <div
+                        class="summary-divider"
+                    ></div>
+
+
+                    <!-- TOTAL -->
+
+                    <div
+                        class="summary-row total-row"
+                    >
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="cartTotal">
+                            RD$0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     VACIAR CARRITO
+                ====================================== -->
+
+                <button
+                    type="button"
+                    id="clearCartButton"
+                    class="clear-cart-btn"
+                    title="Vaciar carrito"
+                >
+
+                    <i
+                        class="fa-solid fa-trash"
+                    ></i>
+
+                    Vaciar carrito
+
+                </button>
+
+
+
+                <!-- =====================================
+                     CONTINUAR COMPRA
+                ====================================== -->
+
+                <button
+                    type="button"
+                    id="checkoutButton"
+                    class="checkout-btn"
+                    disabled
+                >
+
+                    <span>
+                        Continuar compra
+                    </span>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                    ></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script
+        src="../js/producto.js"
+    ></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,595 @@
+.page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    margin: 7px 0;
+    font-size: 28px;
+}
+
+.page-heading p {
+    color: var(--gray-500);
+    font-size: 12px;
+}
+
+.secondary-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 15px;
+
+    background: white;
+
+    border: 1px solid var(--gray-200);
+
+    border-radius: 8px;
+
+    color: var(--gray-600);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* =====================================
+   FORMULARIO
+===================================== */
+
+.product-form {
+    max-width: 950px;
+}
+
+.form-card {
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid var(--gray-200);
+
+    border-radius: 10px;
+}
+
+.form-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.form-card-header h2 {
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+
+.form-card-header p {
+    color: var(--gray-400);
+    font-size: 10px;
+}
+
+.form-card-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background: #dbeafe;
+    color: var(--primary);
+}
+
+.form-card-icon.green {
+    background: #dcfce7;
+    color: var(--green);
+}
+
+.form-card-icon.purple {
+    background: #ede9fe;
+    color: var(--purple);
+}
+
+.form-card-icon.orange {
+    background: #ffedd5;
+    color: var(--orange);
+}
+
+.form-card-icon.blue {
+    background: #dbeafe;
+    color: var(--primary);
+}
+
+
+/* =====================================
+   GRID
+===================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--dark);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.form-group label span {
+    color: var(--red);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--gray-200);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--dark);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    transition: .2s ease;
+}
+
+.form-group input,
+.form-group select {
+    height: 43px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,.07);
+}
+
+
+/* =====================================
+   PRECIO
+===================================== */
+
+.input-prefix {
+    display: flex;
+
+    height: 43px;
+
+    border: 1px solid var(--gray-200);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.input-prefix:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,.07);
+}
+
+.input-prefix span {
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+
+    background: var(--gray-50);
+
+    border-right: 1px solid var(--gray-200);
+
+    color: var(--gray-500);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.input-prefix input {
+    height: 100%;
+
+    border: none;
+
+    box-shadow: none;
+
+    border-radius: 0;
+}
+
+
+/* =====================================
+   CHECKBOX
+===================================== */
+
+.checkbox-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.check-option {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 17px;
+
+    border: 1px solid var(--gray-200);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.check-option:hover {
+    border-color: #bfdbfe;
+    background: #f8fbff;
+}
+
+.check-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.custom-check {
+    flex-shrink: 0;
+
+    width: 19px;
+    height: 19px;
+
+    border: 1px solid var(--gray-300);
+
+    border-radius: 5px;
+
+    background: white;
+}
+
+.check-option input:checked + .custom-check {
+    background: var(--primary);
+
+    border-color: var(--primary);
+}
+
+.check-option input:checked + .custom-check::after {
+    content: "✓";
+
+    display: block;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.check-option div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.check-option strong {
+    font-size: 10px;
+}
+
+.check-option small {
+    color: var(--gray-400);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   AYUDA
+===================================== */
+
+.input-help {
+    color: var(--gray-400);
+
+    font-size: 9px;
+}
+
+
+/* =====================================
+   MENSAJE
+===================================== */
+
+.form-message {
+    display: none;
+
+    margin-bottom: 20px;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.form-message.error {
+    display: block;
+
+    background: #fee2e2;
+    color: var(--red);
+}
+
+.form-message.success {
+    display: block;
+
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 30px;
+}
+
+.cancel-btn {
+    padding: 12px 18px;
+
+    border: 1px solid var(--gray-200);
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: var(--gray-600);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.cancel-btn:hover {
+    background: var(--gray-50);
+}
+
+.form-actions .primary-btn {
+    border: none;
+
+    cursor: pointer;
+}
+
+.form-actions .primary-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .page-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .checkbox-options {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 18px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions a,
+    .form-actions button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+/* =====================================
+   SUBIDA DE IMAGEN
+===================================== */
+
+.image-upload-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px;
+
+    border: 1px dashed var(--gray-300);
+
+    border-radius: 10px;
+
+    background: var(--gray-50);
+}
+
+
+.image-preview {
+    width: 130px;
+    height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: white;
+
+    border: 1px solid var(--gray-200);
+
+    color: var(--gray-400);
+
+    font-size: 10px;
+
+    flex-shrink: 0;
+}
+
+
+.image-preview i {
+    font-size: 32px;
+}
+
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.image-upload-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+}
+
+
+.upload-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+.upload-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+.image-upload-content p {
+    color: var(--gray-400);
+
+    font-size: 9px;
+}
+
+
+.image-upload-content > span {
+    color: var(--gray-500);
+
+    font-size: 9px;
+}
+
+
+@media (max-width: 600px) {
+
+    .image-upload-area {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}

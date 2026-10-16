@@ -17,9 +17,9 @@ const orderRoutes =
 const app = express();
 
 
-// ==========================================
+
 // MIDDLEWARES
-// ==========================================
+
 
 app.use(cors());
 
@@ -30,9 +30,9 @@ app.use(express.urlencoded({
 }));
 
 
-// ==========================================
+
 // ARCHIVOS ESTÁTICOS
-// ==========================================
+
 
 app.use(
     "/uploads",
@@ -42,23 +42,23 @@ app.use(
 );
 
 
-// ==========================================
+
 // RUTA PRINCIPAL
-// ==========================================
+
 
 app.get("/", (req, res) => {
 
     res.json({
-        message: "🚀 SmartPhone RD API funcionando",
+        message: " SmartPhone RD API funcionando",
         version: "1.0.0"
     });
 
 });
 
 
-// ==========================================
+
 // RUTAS
-// ==========================================
+
 
 
 
@@ -78,9 +78,9 @@ app.use(
 );
 
 
-// ==========================================
+
 // MANEJO DE ERRORES
-// ==========================================
+
 
 app.use((req, res) => {
 
@@ -92,33 +92,33 @@ app.use((req, res) => {
 });
 
 
-// ==========================================
+
 // SERVIDOR
-// ==========================================
+
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
 
     console.log(`
-========================================
-      SMARTPHONE RD API
-========================================
+
+      SMARTPHONE PROYECTO UAPA GRUPO 2
+
 
 Servidor:
 http://localhost:${PORT}
 
 Estado:
-🟢 Funcionando
+ Funcionando correctamente
 
-========================================
+
     `);
 
 });
 
-// ==========================================
+
 // FRONTEND
-// ==========================================
+
 
 app.use(
     "/frontend",
