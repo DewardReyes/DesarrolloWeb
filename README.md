@@ -1,97 +1,213 @@
-# SmartPhone RD - Plataforma de Venta y Gestión de Inventario
+# SmartPhone RD --- Plataforma de venta y gestión de inventario
 
-SmartPhone RD es una aplicación web integral orientada a la presentación y venta de celulares y productos tecnológicos. El proyecto fue desarrollado como trabajo final universitario estructurado en tres fases evolutivas: diseño de maquetación estática, interactividad del lado del cliente y construcción de una arquitectura cliente-servidor con base de datos en la nube. El sistema permite a los clientes explorar productos y realizar compras, mientras que proporciona a los administradores un panel de control completo para gestionar el inventario, los pedidos y las ofertas.
+SmartPhone RD es una aplicación web para consultar y vender celulares y
+productos tecnológicos. Incluye un catálogo de productos, carrito de
+compras y proceso de compra para los clientes, además de un panel
+administrativo para gestionar productos, inventario, ofertas, clientes y
+pedidos.
 
-## Características Principales
+## Funcionalidades principales
 
-*   **Experiencia del Cliente (Frontend):**
-    *   **Catálogo Interactivo:** Visualización de productos con filtros dinámicos por texto y estado de stock.
-    *   **Carrito de Compras:** Sistema de carrito persistente mediante `localStorage` que permite agregar productos, ajustar cantidades y visualizar subtotales en tiempo real.
-    *   **Checkout:** Formulario de finalización de compra con captura de datos del cliente, dirección de entrega y selección de método de pago (contra entrega o transferencia).
-*   **Panel Administrativo (Backend):**
-    *   **Dashboard Estadístico:** Tarjetas de resumen con datos en tiempo real sobre total de productos, alertas de stock bajo, pedidos pendientes e ingresos totales.
-    *   **Gestión de Pedidos:** Seguimiento completo del estado del pedido (Pendiente, Confirmado, Entregado, Cancelado) con actualización en tiempo real en la base de datos.
-    *   **Control de Inventario (CRUD):** Capacidad para agregar nuevos productos, editar detalles técnicos (RAM, almacenamiento, color, marca), gestionar el stock y ver el historial de movimientos de inventario por entradas y salidas.
-    *   **Gestión de Ofertas y Destacados:** Módulo para activar precios de oferta (mostrando el precio anterior tachado) y fijar productos en la sección de destacados.
-    *   **Historial de Clientes:** Vista detallada de los clientes registrados, historial de pedidos individuales y el valor total de sus compras.
+### Para clientes
 
-## Tecnologías y Herramientas Utilizadas
+-   Consultar el catálogo de productos.
+-   Buscar y filtrar productos según las opciones disponibles en la
+    interfaz.
+-   Agregar productos al carrito y ajustar cantidades.
+-   Completar el proceso de compra con los datos de entrega y el método
+    de pago disponible.
 
-**Frontend:**
-*   **HTML5 & CSS3:** Maquetación semántica, CSS Grid, Flexbox y diseño adaptable (Media Queries).
-*   **JavaScript (ES6+):** Manipulación del DOM, validación de formularios, formato de precios y comunicación asíncrona (Fetch API) con el servidor.
+### Para administración
 
-**Backend:**
-*   **Node.js & Express.js:** Servidor local, enrutamiento (`/api/auth`, `/api/products`, `/api/orders`) y creación de API REST.
-*   **MySQL:** Sistema gestor de base de datos relacional para el almacenamiento de usuarios, inventario e historial de pedidos.
-*   **Aiven:** Servicio de alojamiento en la nube utilizado para el despliegue de la base de datos MySQL.
+-   Consultar indicadores del negocio desde el panel administrativo.
+-   Crear y editar productos y gestionar su inventario.
+-   Administrar ofertas y productos destacados.
+-   Consultar pedidos y actualizar su estado.
+-   Consultar información de clientes e historial de pedidos.
+-   Consultar movimientos de inventario, cuando estén registrados.
 
-**Seguridad y Control:**
-*   **JSON Web Tokens (JWT):** Autenticación de usuarios y protección de rutas administrativas mediante tokens con 8 horas de duración.
-*   **Bcryptjs:** Encriptación y hashing de contraseñas en la base de datos para garantizar la seguridad de los accesos.
-*   **Git & GitHub:** Control de versiones, gestión de ramas (`fase-1-maquetacion`, `fase-3-backend`) y trabajo colaborativo.
+## Tecnologías
 
-## Requisitos Previos
+**Frontend** - HTML5 - CSS3 - JavaScript (ES6+) - Fetch API para
+comunicarse con el backend
 
-Para ejecutar este proyecto en un entorno local, asegúrese de tener instalado:
-*   Node.js (Entorno de ejecución).
-*   Gestor de paquetes `npm` (incluido con Node.js).
-*   MySQL Server o MySQL Workbench (Solo si desea ejecutar la base de datos localmente en lugar de usar la conexión de Aiven).
+**Backend** - Node.js - Express - MySQL - `mysql2` para la conexión a
+MySQL - `dotenv` para cargar variables de entorno - `bcryptjs` para el
+hash de contraseñas - `jsonwebtoken` para trabajar con tokens JWT -
+`multer` para la gestión de archivos
 
-## Instalación y Ejecución Local
+**Herramientas** - Git y GitHub - MySQL Workbench (opcional, para
+administrar la base de datos mediante interfaz gráfica)
 
-**1. Clonar el repositorio:**
-```bash
-git clone [https://github.com/DewardReyes/DesarrolloWeb.git](https://github.com/DewardReyes/DesarrolloWeb.git)
+## Requisitos previos
+
+Antes de ejecutar el proyecto, instala:
+
+-   Node.js y npm.
+-   MySQL Server o acceso a una instancia MySQL compatible.
+-   Git, si vas a clonar el repositorio.
+-   Un navegador web moderno.
+
+## Obtener el proyecto
+
+Clona el repositorio y entra en la carpeta:
+
+``` bash
+git clone https://github.com/DewardReyes/DesarrolloWeb.git
 cd DesarrolloWeb
 ```
 
-**2. Instalar dependencias:**
-```bash
+## Configurar el backend
+
+Entra en la carpeta del backend e instala sus dependencias:
+
+``` bash
+cd backend
 npm install
 ```
 
-**3. Configurar variables de entorno:**
-Cree un archivo `.env` en la raíz del proyecto basándose en las credenciales de su base de datos. El proyecto utiliza la siguiente estructura:
-```env
+Crea el archivo `backend/.env` tomando como referencia
+`backend/.env.example`. Configura los valores de acuerdo con tu
+instalación de MySQL:
+
+``` dotenv
 PORT=3000
-DB_HOST=servidor_de_MySQL_o_Aiven
-DB_USER=avnadmin
+DB_HOST=localhost
+DB_USER=tu_usuario_mysql
+DB_PASSWORD=tu_contrasena_mysql
 DB_NAME=smartphone_rd
-DB_PORT=10792
-JWT_SECRET=smartphone_rd_secret_20225
+DB_PORT=3306
+DB_SSL_CA=
+JWT_SECRET=reemplaza_esto_por_un_secreto_largo_y_aleatorio
 ```
 
-**4. Configurar la Base de Datos:**
-Si no está utilizando la conexión directa a la nube (Aiven), importe la estructura de la base de datos utilizando el archivo provisto en el código fuente:
-*   Abra su gestor de base de datos (ej. MySQL Workbench).
-*   Ejecute el script SQL alojado en el archivo `db.sql` (ubicado dentro de la carpeta del backend) para crear las tablas relacionales y sus dependencias.
+Los valores anteriores son ejemplos para una instalación local. Si
+utilizas una base de datos en la nube, sustituye `DB_HOST`, `DB_USER`,
+`DB_PASSWORD`, `DB_PORT` y, cuando corresponda, `DB_SSL_CA` por los
+datos proporcionados por tu proveedor. No publiques el archivo `.env` ni
+incluyas contraseñas o secretos reales en este README.
 
-**5. Iniciar el servidor:**
-Ejecute el siguiente comando en su terminal para levantar el servidor backend:
-```bash
-node server.js
+## Crear la base de datos
+
+El script SQL del proyecto está ubicado en:
+
+``` text
+backend/db/db
 ```
 
-**6. Acceder a la aplicación:**
-Abra su navegador web y visite: `http://localhost:3000`
+Abre ese archivo desde MySQL Workbench o tu cliente MySQL y ejecuta su
+contenido con un usuario que tenga permisos para crear la base de datos
+y sus tablas. El script crea la base de datos `smartphone_rd`, las
+tablas del sistema y categorías iniciales.
 
-## Credenciales de Demostración (Administrador)
+El script incluye las tablas y categorías iniciales, pero no inserta por
+sí solo un usuario administrador ni un catálogo completo de productos.
+Para la demostración, prepara los datos de prueba que necesites.
 
-Para evaluar todas las funcionalidades del panel de control (`Dashboard`), utilice las siguientes credenciales de acceso:
-*   **Correo Electrónico:** Dewnicole2929@gmail.com
-*   **Contraseña:** [COLOQUE_SU_CONTRASEÑA_AQUÍ]
+> Si la base de datos ya existe y contiene información, revisa el script
+> antes de ejecutarlo de nuevo: incluye instrucciones para crear la base
+> de datos y las tablas.
 
-## Equipo de Desarrollo
+## Crear un administrador de demostración
 
-Este proyecto fue desarrollado de manera colaborativa por estudiantes de la Universidad Abierta Para Adultos (UAPA):
+El proyecto incluye el archivo `backend/create-admin.js`. Antes de
+ejecutarlo, revisa ese archivo y configura las credenciales de
+demostración de forma segura. No publiques credenciales reales ni las
+dejes escritas directamente en el código.
 
-*   **Isaías Alejandro Figuereo Hernández** - 100075152
-*   **Saúl Gómez Mercado** - 100091229
-*   **Darlin Alexander Marte Coronado** - 100076430
-*   **Mitiel Alberto Morrobel Díaz** - 100039936
-*   **Lizardo José Paniagua Torres** - 100078548
-*   **Jeremy Polanco Peralta** - 100096209
-*   **Yanibel Pérez Vásquez** - 100076965
-*   **Deward Francisco Reyes Sosa** - 100075688
-*   **Ángel Gabriel Torres Holguín** - 100076837
+Con la base de datos configurada, ejecuta desde la carpeta `backend`:
+
+``` bash
+node create-admin.js
+```
+
+El script intenta crear un usuario con rol `admin`. Si el correo ya
+existe, indica que no crea otro administrador. Asegúrate de que las
+credenciales configuradas coincidan con las que usarás durante la
+demostración.
+
+## Iniciar el servidor
+
+Desde la carpeta `backend`, ejecuta:
+
+``` bash
+npm start
+```
+
+El servidor utiliza el puerto indicado en `PORT`; si no se configura,
+utiliza el puerto `3000`.
+
+La ruta principal de la API está disponible en:
+
+``` text
+http://localhost:3000/
+```
+
+La respuesta esperada informa que la API de SmartPhone RD está
+funcionando. Las rutas principales de la API son:
+
+-   `/api/auth`
+-   `/api/products`
+-   `/api/orders`
+
+Para detener el servidor, pulsa `Ctrl + C` en la terminal.
+
+## Abrir el frontend
+
+Los archivos de la interfaz están dentro de la carpeta `frontend`.
+Puedes abrirlos con un servidor estático de desarrollo, por ejemplo la
+extensión **Live Server** de Visual Studio Code, y mantener el backend
+ejecutándose en otra terminal.
+
+Si la interfaz no logra comunicarse con la API, comprueba que la
+dirección del backend configurada en los archivos JavaScript coincida
+con el entorno donde estás ejecutando el servidor. En desarrollo local,
+normalmente será `http://localhost:3000`.
+
+## Solución de problemas
+
+-   **Error de conexión a MySQL:** comprueba que el servidor de base de
+    datos esté activo y que `DB_HOST`, `DB_USER`, `DB_PASSWORD`,
+    `DB_NAME` y `DB_PORT` sean correctos.
+-   **Faltan módulos de Node.js:** entra en `backend` y ejecuta
+    `npm install`.
+-   **El puerto está ocupado:** cambia `PORT` por un puerto disponible y
+    utiliza esa misma dirección al probar la API.
+-   **No puedes iniciar sesión como administrador:** verifica que el
+    administrador se haya creado en la base de datos y que estés
+    utilizando las credenciales configuradas para la demostración.
+-   **No aparecen productos:** comprueba que existan registros en la
+    tabla `products`; el script SQL incluye categorías iniciales, pero
+    no un catálogo completo de productos.
+
+## Seguridad
+
+-   No subas `.env` a GitHub.
+-   Mantén `.env.example` con valores de ejemplo, nunca con contraseñas
+    o secretos reales.
+-   Usa una clave `JWT_SECRET` larga, aleatoria y privada.
+-   Cambia las credenciales de demostración antes de compartir o
+    desplegar el proyecto.
+-   No uses credenciales de desarrollo en un entorno de producción.
+
+## Equipo de desarrollo
+
+Proyecto desarrollado de manera colaborativa por estudiantes de la
+Universidad Abierta Para Adultos (UAPA):
+
+-   Isaías Alejandro Figuereo Hernández --- 100075152
+-   Saúl Gómez Mercado --- 100091229
+-   Darlin Alexander Marte Coronado --- 100076430
+-   Mitiel Alberto Morrobel Díaz --- 100039936
+-   Lizardo José Paniagua Torres --- 100078548
+-   Jeremy Polanco Peralta --- 100096209
+-   Yanibel Pérez Vásquez --- 100076965
+-   Deward Francisco Reyes Sosa --- 100075688
+-   Ángel Gabriel Torres Holguín --- 100076837
+
+## Alcance de esta guía
+
+Este README describe la estructura y los comandos identificados en el
+repositorio. La disponibilidad de una cuenta de demostración, los datos
+de productos y el funcionamiento completo del frontend deben verificarse
+en el entorno donde se vaya a evaluar el proyecto.
